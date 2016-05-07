@@ -20,7 +20,9 @@ namespace ConsoleApplication1 {
                         continue;
                     }
                     Stack<bool> stack = new Stack<bool>();
+                    bool invalidInput = false;
                     foreach (char token in tokens) {
+                        bool invalidChar = false;
                         switch (token) {
                             case '0':
                                 stack.Push(false);
@@ -48,14 +50,21 @@ namespace ConsoleApplication1 {
                                 stack.Push(g ^ h);
                                 break;
                             case 'h':
-								PrintHelp();
-								break;
+				PrintHelp();
+				break;
                             default:
                                 PrintError();
+                                invalidChar = true;
                                 break;
                         }
+                        if (invalidChar) {
+                            invalidInput = true;
+                            break;
+                        }
                     }
-                    Console.WriteLine((stack.Pop() ? 1 : 0) + "\n");
+                    if (!invalidInput) {
+                        Console.WriteLine((stack.Pop() ? 1 : 0) + "\n");
+                    }
                 }
                 catch (Exception e) {
                     PrintError();
