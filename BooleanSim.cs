@@ -13,7 +13,7 @@ namespace ConsoleApplication1 {
                     Console.WriteLine("Enter 'h' for help, or 'q' for quit");
                     Console.Write(" -> ");
                     string line = Console.ReadLine();
-                    var tokens = line.Split().Select(s => char.ToUpper(s[0])).ToList();
+                    var tokens = line.Split().Select(s => char.ToLower(s[0])).ToList();
                     if (tokens[0] == 'q' || tokens[0] == 'Q') { break; }
                     else if (tokens[0] == 'h' || tokens[1] == 'H') {
                         PrintHelp();
@@ -28,25 +28,28 @@ namespace ConsoleApplication1 {
                             case '1':
                                 stack.Push(true);
                                 break;
-                            case 'N':
+                            case 'n':
                                 bool b = stack.Pop();
                                 stack.Push(!b);
                                 break;
-                            case 'A':
+                            case 'a':
                                 bool c = stack.Pop();
                                 bool d = stack.Pop();
                                 stack.Push(d && c);
                                 break;
-                            case 'R':
+                            case 'r':
                                 bool e = stack.Pop();
                                 bool f = stack.Pop();
                                 stack.Push(e || f);
                                 break;
-                            case 'X':
+                            case 'x':
                                 bool g = stack.Pop();
                                 bool h = stack.Pop();
                                 stack.Push(g ^ h);
                                 break;
+                            case 'h':
+								PrintHelp();
+								break;
                             default:
                                 PrintError();
                                 break;
