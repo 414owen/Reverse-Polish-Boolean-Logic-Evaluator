@@ -14,8 +14,8 @@ namespace ConsoleApplication1 {
                     Console.Write(" -> ");
                     string line = Console.ReadLine();
                     var tokens = line.Split().Select(s => char.ToLower(s[0])).ToList();
-                    if (tokens[0] == 'q' || tokens[0] == 'Q') { break; }
-                    else if (tokens[0] == 'h' || tokens[1] == 'H') {
+                    if (tokens[0] == 'q') { break; }
+                    else if (tokens[0] == 'h') {
                         PrintHelp();
                         continue;
                     }
