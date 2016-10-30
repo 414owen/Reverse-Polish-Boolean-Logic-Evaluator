@@ -60,7 +60,7 @@ namespace ConsoleApplication1 {
 				} else {
 					bool res = stack.Pop();
 					if (stack.Count == 0) {
-						Console.WriteLine(res ? 1 : 0);
+						Console.WriteLine("  = " + (res ? 1 : 0));
 					} else {
 						Console.WriteLine("Malformed expression, finished with more that one element on the stack");
 					}
