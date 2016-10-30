@@ -77,7 +77,7 @@ namespace ConsoleApplication1 {
         }
 
         private static void PrintHelp() {
-            Console.WriteLine("0: true\n"
+            Console.WriteLine("0: false\n"
                 + "1: true\n"
                 + "A: and\n"
                 + "R: or\n"
