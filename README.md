@@ -1,6 +1,6 @@
 ## What this does
 
-Takes in a logical expression (in reverse-polish zeros-and-ones notation) and
+Takes in a logical expression (in reverse-polish zeros-and-ones notation) and  
 returns the value of that expression (zero or one)
 
 ```
